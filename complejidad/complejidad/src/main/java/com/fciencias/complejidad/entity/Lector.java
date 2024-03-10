@@ -24,6 +24,7 @@ public class Lector {
 		creaClausula();
 	}
 	
+	// Inicia la lectura del archivo
 	private void leeArchivo(String archivo) {
 		try(BufferedReader br = new BufferedReader(new FileReader("./Ejemplares/"+archivo))){
 			String l;
@@ -41,6 +42,7 @@ public class Lector {
 			transformaClausula(c);
 	}
 	
+	// Genera la creación de las fórmulas
 	private void transformaClausula(String cla) {
 		String[] literales = cla.split("\\+");
 		if(literales.length != 3) {
@@ -61,6 +63,7 @@ public class Lector {
 		this.clausulas.add(new Clausula(literalesClausula));
  	}
 	
+	// Verifica si existe la literal, de lo contrario se crea y se le asigna un valor de verdad aleatoriamente
 	private Literal existeLiteral(String name) {
 		Random random = new Random();
 		for(Literal l : this.literales)
