@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Clase que simula un procesador de archivos
+ */
 public class Lector {
 	
 	private List<Literal> literales;
@@ -68,22 +71,47 @@ public class Lector {
 		return l;
 	}
 
+	/**
+	 * Obtiene la lista de clausulas de una fórmula
+	 * 
+	 * @return La lista de clausulas
+	 */
 	public List<Clausula> getClausulas() {
 		return clausulas;
 	}
 
+	/**
+	 * Modifica la lista de clausulas de una fórmula
+	 * 
+	 * @param clausulas La nueva lisa de fórmulas
+	 */
 	public void setClausulas(List<Clausula> clausulas) {
 		this.clausulas = clausulas;
 	}
 
+	/**
+	 * Obtiene la lista de cadenas que obtiene del archivo
+	 * 
+	 * @return La lista de cadenas que obtiene del archivo
+	 */
 	public LinkedList<String> getLista() {
 		return lista;
 	}
 
+	/**
+	 * Modifica la lista de cadenas que obtiene del archivo
+	 * 
+	 * @param lista La nueva lista de cadenas de un archivo
+	 */
 	public void setLista(LinkedList<String> lista) {
 		this.lista = lista;
 	}
 
+	/**
+	 * Obtiene la lista de literales obtenidas una vez que se procesa el archivo
+	 * 
+	 * @return La lista de literales
+	 */
 	public List<Literal> getLiterales() {
 		return literales;
 	}
