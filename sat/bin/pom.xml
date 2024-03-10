@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fciencias</groupId>
-	<artifactId>complejidad</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>sat</artifactId>
+	<version>0.0.1</version>
 	<name>complejidad</name>
 	<description>programa 1</description>
 	<properties>
