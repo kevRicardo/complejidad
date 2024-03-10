@@ -9,6 +9,8 @@ import java.util.Random;
 
 /**
  * Clase que simula un procesador de archivos
+ * 
+ * @author Villegas Salvador Kevin Ricardo
  */
 public class Lector {
 	

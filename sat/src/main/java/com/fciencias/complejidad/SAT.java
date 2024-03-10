@@ -4,6 +4,11 @@ import com.fciencias.complejidad.entity.Clausula;
 import com.fciencias.complejidad.entity.Lector;
 import com.fciencias.complejidad.entity.Literal;
 
+/**
+ * 3-SAT
+ * 
+ * @author Villegas Salvador Kevin Ricardo
+ */
 public class SAT {
 
 	public static void main(String[] args) {

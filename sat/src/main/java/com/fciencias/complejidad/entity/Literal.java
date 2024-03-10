@@ -3,8 +3,7 @@ package com.fciencias.complejidad.entity;
 /**
  * Clase que simula una literal
  * 
- * @param name El nombre de la literal. Se le asigna un nombre con la finalidad de tener una referencia .
- * @param valor El valor booleano que se le asigna
+ * @author Villegas Salvador Kevin Ricardo
  */
 public class Literal {
 

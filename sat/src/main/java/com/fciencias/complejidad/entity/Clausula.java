@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Clase que simula una clausula
  * 
- * @param literales Las literales que conforman la clausula
+ * @author Villegas Salvador Kevin Ricardo
  */
 public class Clausula {
 	
