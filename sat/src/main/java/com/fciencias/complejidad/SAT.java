@@ -25,13 +25,13 @@ public class SAT {
 			
 			System.out.println("\nFase verificadora\n");
 			
-			System.out.println("La fórmula: " + lector.getLista().get(0));
+			System.out.println("\tLa fórmula: " + lector.getLista().get(0));
 			
 			// Empieza a verificar si la clausula es 3SAT
 			if(Clausula.SAT(lector.getClausulas()))
-				System.out.println("Es 3-SAT satisfacible");
+				System.out.println("\tEs 3-SAT satisfacible");
 			else
-				System.err.println("No es 3-SAT satisfacible");
+				System.err.println("\tNo es 3-SAT satisfacible");
 		} catch(ArrayIndexOutOfBoundsException e) {
 			System.err.println("La clausula no cumple con tener 3 literales");
 		}

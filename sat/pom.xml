@@ -11,7 +11,7 @@
 	<groupId>com.fciencias</groupId>
 	<artifactId>sat</artifactId>
 	<version>0.0.1</version>
-	<name>complejidad</name>
+	<name>sat</name>
 	<description>programa 1</description>
 	<properties>
 		<java.version>11</java.version>
