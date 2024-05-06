@@ -1,11 +1,13 @@
 package com.fciencias.complejidad;
 
-import com.fciencias.complejidad.entity.Clausula;
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 import com.fciencias.complejidad.entity.Lector;
-import com.fciencias.complejidad.entity.Literal;
+import com.fciencias.complejidad.entity.Proceso;
 
 /**
- * 3-SAT
+ * Subset Sum
  * 
  * @author Villegas Salvador Kevin Ricardo
  */
@@ -13,27 +15,31 @@ public class SubsetSum {
 
 	public static void main(String[] args) {
 		try {
-			System.out.println("Fase adivinadora\n");
 			
-			// Empieza con la asignación de valores al azar de las literales
-			Lector lector = new Lector("3SAT1.txt");
+			// Se procesa la lectura del archivo
+			Lector lector = new Lector("Subset.txt");
 			
-			System.out.println("Valores asignados a las literales:");
+			System.out.println("Valores de entrada\n");
 			
-			for(Literal l : lector.getLiterales())
-				System.out.println("\t" + l);
+			System.out.println("\tSuma a encontrar: " + lector.getSuma());
+			System.out.println("\tDelta: " + lector.getDelta());
+			System.out.println("\tConjunto: " + Arrays.toString(lector.getConjuntoArreglo()));
 			
-			System.out.println("\nFase verificadora\n");
+			// Se inicia el proceso para la suma del subconjunto
+			Proceso proceso = new Proceso();
+			proceso.approxSubsetSum(lector.getConjuntoArreglo(), lector.getSuma(), lector.getDelta());
 			
-			System.out.println("\tLa fórmula: " + lector.getLista().get(0));
-			
-			// Empieza a verificar si la clausula es 3SAT
-			if(Clausula.SAT(lector.getClausulas()))
-				System.out.println("\tEs 3-SAT satisfacible");
-			else
-				System.err.println("\tNo es 3-SAT satisfacible");
-		} catch(ArrayIndexOutOfBoundsException e) {
-			System.err.println("La clausula no cumple con tener 3 literales");
+			// Si la suma a encontrar es mayor que la suma de los elementos del conjunto, como resultado se dará el mismo conjunto
+			if (proceso.getSuma() >= IntStream.of(lector.getConjuntoArreglo()).sum()) {
+				System.out.println("\nEl valor de la suma máxima es: " + IntStream.of(lector.getConjuntoArreglo()).sum());
+				System.out.println("La lista del subconjunto es: " + Arrays.toString(lector.getConjuntoArreglo()));
+			} else {
+				// Se realiza el proceso para encontrar el subconjunto
+				System.out.println("\nEl valor de la suma máxima es: " + proceso.getSuma());
+				System.out.println("La lista del subconjunto es: " +  proceso.getConjunto());
+			}
+		} catch (NumberFormatException e) {
+			System.out.println("Error en la lectura de las variables");
 		}
 	}
 }
